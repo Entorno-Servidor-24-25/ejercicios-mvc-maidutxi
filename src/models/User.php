@@ -18,4 +18,18 @@ class User {
             return false;
         }
     }
+
+    public static function getAll($connection) {
+        $users = []; // Inicializar un array para almacenar los usuarios
+        $sql = "SELECT * FROM Usuario"; 
+        $result = $connection->query($sql); 
+
+        if ($result->num_rows > 0) { 
+            while ($rowNombre = $result->fetch_assoc()) { // Recorrer cada fila del resultado
+                $users[] = $rowNombre; // Añadir la fila al array de usuarios
+            }
+        }
+
+        return $users; // Devolver el array de usuarios
+    }
 }
