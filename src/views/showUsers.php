@@ -10,19 +10,20 @@
         <table border="1"> 
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nombre</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($user['id']); ?></td> 
                         <td><?php echo htmlspecialchars($user['name']); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <form action="">
+            <input type="submit" value="Eliminar Usuario" name="eliminar">
+        </form>
         <a href="index.php">Volver al inicio</a> 
     </body>
 </html>
