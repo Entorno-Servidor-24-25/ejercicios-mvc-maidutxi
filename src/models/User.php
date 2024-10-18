@@ -26,8 +26,8 @@ class User {
         $result = $connection->query($sql); 
 
         if ($result->num_rows > 0) { 
-            while ($rowNombre = $result->fetch_assoc()) { // Recorrer cada fila del resultado
-                $users[] = $rowNombre; // Añadir la fila al array de usuarios
+            while ($rowNombre = $result->fetch_assoc()) { 
+                $users[] = $rowNombre; 
                
             }
         }
@@ -35,16 +35,13 @@ class User {
         return $users; 
     }
 
-    public function delete($connection){
-        
-        $sql = "DELETE FROM Usuario WHERE id = $id";
-
+    public static function delete($connection) {
+        $sql = "DELETE FROM Usuario WHERE id = ;
+    
         if ($connection->query($sql) === TRUE) {
-            
-            $message = "Usuario eliminado correctamente.";
+            return true; 
         } else {
-            
-            $message = "Error al eliminar el usuario: " . $connection->error;
+            return false; 
         }
     }
 }

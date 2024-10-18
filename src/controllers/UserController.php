@@ -29,23 +29,26 @@ class UserController {
         }
     }
 
-    public function getAllUsers(){
-
-       
-        
+    public function getAllUsers() {
         global $connection;
-    
-        // Obtener todos los usuarios usando el método getAll del modelo User
+        
+        
         $users = User::getAll($connection);
-
-        var_dump($users);
-
+    
+        
         if ($users === null) {
             $users = []; 
         }
     
         
         require_once BASE_PATH . '/views/showUsers.php'; 
-        
     }
+
+    public function deleteUser() {
+        global $connection;
+    
+        $users = User::delete($connection);
+    }
+        
+    
 }

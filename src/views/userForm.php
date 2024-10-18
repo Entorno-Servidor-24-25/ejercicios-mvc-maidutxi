@@ -12,5 +12,6 @@
         <input type="text" name="name" id="name" required>
         <button type="submit">Create User</button>
     </form>
+    <a href="../views/showUsers.php">Mostrar todos los usuarios</a>
 </body>
 </html>
