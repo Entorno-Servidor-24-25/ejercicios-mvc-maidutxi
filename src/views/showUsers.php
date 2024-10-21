@@ -25,7 +25,7 @@
                         <td><?php echo htmlspecialchars($user['name']); ?></td>
                         <td>
                             <form action="" method="POST"> 
-                                <input type="hidden" name="userId" value="<?php echo $user['id']; ?>"> <!-- ID del usuario -->
+                                <input type="hidden" name="userId" value="<?php echo $user['id']; ?>"> 
                                 <input type="submit" value="Eliminar Usuario" name="eliminar">
                             </form>
                         </td>
