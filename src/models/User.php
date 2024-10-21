@@ -36,7 +36,7 @@ class User {
     }
 
     public static function delete($connection) {
-        $sql = "DELETE FROM Usuario WHERE id = ;
+        $sql = "DELETE FROM Usuario WHERE id = 'id'";
     
         if ($connection->query($sql) === TRUE) {
             return true; 
