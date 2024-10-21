@@ -18,4 +18,33 @@ class User {
             return false;
         }
     }
+
+    //funcion estatica para no crear un objeto user en el controller
+    public static function getAll($connection) { 
+        $users = []; // Inicializar un array para almacenar los usuarios
+        $sql = "SELECT * FROM Usuario"; 
+        $result = $connection->query($sql); 
+
+        if ($result->num_rows > 0) { 
+            while ($rowNombre = $result->fetch_assoc()) { 
+                $users[] = $rowNombre; 
+               
+            }
+        }
+
+        return $users; 
+    }
+
+    public static function delete($connection, $userId) {
+        $sql = "DELETE FROM Usuario WHERE id = $userId";
+    
+        if ($connection->query($sql) === TRUE) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
 }
+
+
+   
