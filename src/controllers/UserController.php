@@ -40,7 +40,21 @@ class UserController {
     public function deleteUser() {
         global $connection;
     
-        $users = User::delete($connection);
+        if (isset($_POST['userId'])) {
+            $userId = $_POST['userId'];
+            
+            // Llama al método delete del modelo User
+            if (User::delete($connection, $userId)) {
+                // Cargar  la lista de usuarios después de eliminar
+                $this->getAllUsers(); 
+            } else {
+                echo "Error al eliminar el usuario.";
+                $this->getAllUsers(); 
+            }
+        } else {
+            echo "No se ha especificado un ID de usuario.";
+            $this->getAllUsers(); 
+        }
     }
         
     

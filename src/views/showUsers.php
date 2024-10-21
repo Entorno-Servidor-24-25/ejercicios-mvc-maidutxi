@@ -18,15 +18,15 @@
         <tbody>
             <?php if (empty($users)): ?>
                 <tr>
-                    <td colspan="3">No hay usuarios registrados.</td> <!-- Cambia a 3 para que coincida con el número de columnas -->
+                    <td colspan="3">No hay usuarios registrados.</td> 
                 </tr>
             <?php else: ?>
                 <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($user['id']); ?></td> <!-- Mostrar ID -->
+                        <td><?php echo htmlspecialchars($user['id']); ?></td>
                         <td><?php echo htmlspecialchars($user['name']); ?></td>
                         <td>
-                            <form action="" method="POST"> 
+                            <form action="deleteUser.php" method="POST"> 
                                 <input type="hidden" name="userId" value="<?php echo $user['id']; ?>"> 
                                 <input type="submit" value="Eliminar Usuario" name="eliminar">
                             </form>
