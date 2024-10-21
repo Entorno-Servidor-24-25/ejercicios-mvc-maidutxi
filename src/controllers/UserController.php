@@ -32,14 +32,7 @@ class UserController {
     public function getAllUsers() {
         global $connection;
         
-        
         $users = User::getAll($connection);
-    
-        
-        if ($users === null) {
-            $users = []; 
-        }
-    
         
         require_once BASE_PATH . '/views/showUsers.php'; 
     }

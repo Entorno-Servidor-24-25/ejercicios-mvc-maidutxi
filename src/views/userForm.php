@@ -12,7 +12,7 @@
         <input type="text" name="name" id="name" required>
         <button type="submit">Create User</button>
     </form>
-    <form action="listaUsuarios.php" method="post">
+    <form action="../listaUsuarios.php" method="post">
         <button type="submit">Mostrar Usuarios</button>
     </form>
 </body>

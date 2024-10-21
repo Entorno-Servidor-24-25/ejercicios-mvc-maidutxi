@@ -10,6 +10,7 @@
     <table border="1"> 
         <thead>
             <tr>
+                <th>ID</th> <!-- Nueva columna para el ID -->
                 <th>Nombre</th>
                 <th>Acciones</th> 
             </tr>
@@ -17,11 +18,12 @@
         <tbody>
             <?php if (empty($users)): ?>
                 <tr>
-                    <td colspan="2">No hay usuarios registrados.</td>
+                    <td colspan="3">No hay usuarios registrados.</td> <!-- Cambia a 3 para que coincida con el número de columnas -->
                 </tr>
             <?php else: ?>
                 <?php foreach ($users as $user): ?>
                     <tr>
+                        <td><?php echo htmlspecialchars($user['id']); ?></td> <!-- Mostrar ID -->
                         <td><?php echo htmlspecialchars($user['name']); ?></td>
                         <td>
                             <form action="" method="POST"> 
